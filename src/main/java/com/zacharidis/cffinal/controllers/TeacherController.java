@@ -25,7 +25,7 @@ public class TeacherController {
 
         Teacher aTeacher = new Teacher();
         model.addAttribute("teacher",aTeacher);
-        return ("new-teacher");
+        return ("teachers/new-teacher");
 
 
 

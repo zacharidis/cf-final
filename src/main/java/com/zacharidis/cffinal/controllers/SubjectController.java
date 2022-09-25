@@ -24,7 +24,7 @@ public class SubjectController {
 
         Subject aSubject = new Subject();
         model.addAttribute("subject", aSubject);
-        return ("new-subject");
+        return ("subjects/new-subject");
     }
 
     @PostMapping("/save")

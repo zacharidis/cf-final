@@ -9,7 +9,17 @@
 
 </head>
 
-<body>
+
+
+<body style="background-color: #ffc107">
+
+
+<nav th:replace="layouts :: navbar"></nav>
+
+
+<hr class="bg-danger border-2 border-top border-danger">
+
+
         <div class="container">
 
             <form action="/subjects/save" th:object="${subject}" method="POST">
