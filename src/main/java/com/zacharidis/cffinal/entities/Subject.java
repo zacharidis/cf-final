@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Subject {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long subjectId;
     private String name;
     private String stage; // finished , hasn't started , ongoing

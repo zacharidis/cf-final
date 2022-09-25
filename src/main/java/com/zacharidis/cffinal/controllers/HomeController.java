@@ -1,7 +1,9 @@
 package com.zacharidis.cffinal.controllers;
 
+import com.zacharidis.cffinal.dao.IStudentRepository;
 import com.zacharidis.cffinal.dao.ISubjectRepository;
 import com.zacharidis.cffinal.dao.ITeacherRepository;
+import com.zacharidis.cffinal.entities.Student;
 import com.zacharidis.cffinal.entities.Subject;
 import com.zacharidis.cffinal.entities.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,18 @@ public class HomeController {
         @Autowired
         ITeacherRepository teacherRepo;
 
+        @Autowired
+        IStudentRepository studentRepo;
+
+
 
         @GetMapping("/")
         public  String displayHome(Model model){
+
+
+            List<Student> students = studentRepo.findAll();
+            model.addAttribute("students",students);
+
 
             List<Teacher> teachers = teacherRepo.findAll();
             model.addAttribute("teachers",teachers);

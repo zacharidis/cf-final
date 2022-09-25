@@ -8,26 +8,37 @@ import javax.persistence.Id;
 @Entity
 public class Teacher {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long teacherId;
 
     private String firstName;
     private String lastName;
     private String email;
 
+    private String telephone;
+
     // constructors
 
     public  Teacher(){}
 
-    public Teacher(String firstName, String lastName, String email) {
+    public Teacher(String firstName, String lastName, String email , String telephone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.telephone= telephone;
     }
 
 
     // getters and setters
 
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 
     public long getTeacherId() {
         return teacherId;

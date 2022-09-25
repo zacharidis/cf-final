@@ -20,11 +20,15 @@
 <div class="container">
 
 
+    <div class="card" style="background-color:#fd7e14">
+        <div class="card-body">
+
       <form action="/teachers/save" th:object="${teacher}" method="POST">
 
         <input type="text" placeholder="Teacher First Name" th:field="${teacher.firstName}">
         <input type="text" placeholder="Teacher Last Name" th:field="${teacher.lastName}">
         <input type="text" placeholder="Teacher Email Adress" th:field="${teacher.email}">
+          <input type="text" placeholder="Teachers Telephone" th:field="${teacher.telephone}">
         <button  class="btn btn-primary" type="submit">Create New Teacher</button>
 
 
@@ -33,10 +37,10 @@
       </form>
 
 
+        </div>
 
 
-
-
+</div>
 
 
 

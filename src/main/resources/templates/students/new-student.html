@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1 ,shrink-to-fit=no">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body style="background-color: #ffc107">
+
+<nav th:replace="layouts :: navbar"></nav>
+
+
+<hr class="bg-danger border-2 border-top border-danger">
+
+
+<div class="container">
+
+
+  <div class="card" style="background-color:#fd7e14">
+    <div class="card-body">
+
+      <form action="/students/save" th:object="${student}" method="POST">
+
+         <h4>Student Name : </h4>
+        <input type="text" placeholder="Student First Name" th:field="${student.firstName}">
+        <h4> Student Last Name</h4>
+        <input type="text" placeholder="Student Last Name" th:field="${student.lastName}">
+
+        <input type="text" placeholder="Student Email Adress" th:field="${student.email}">
+        <input type="text" placeholder="Student Telephone" th:field="${student.telephone}">
+        <select th:field="${student.education}">
+          <option th:value="BSc">BSc</option>
+          <option th:value="MSc">MSc</option>
+          <option th:value="PhD">PhD</option>
+        </select>
+        <button  class="btn btn-primary" type="submit">Create New Student</button>
+
+
+
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+
+
+</div>
+
+
+
+</body>
+
+</html>

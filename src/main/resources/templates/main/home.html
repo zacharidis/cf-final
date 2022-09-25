@@ -54,17 +54,18 @@
     <hr>
     <hr>
 
-    <div class="card" style="background-color:#fd7e14
- ">
+    <div class="card" style="background-color:#fd7e14">
         <div class="card-body">
             <h1> List of Teachers </h1>
-            <table class="tablet table-bordered table-stripped">
+            <table class="table table-bordered table-stripped">
                 <thead class="thead-dark">
                 <tr>
                     <th> Teacher No : </th>
                     <th> Teacher First Name </th>
                     <th> Teacher Last  Name </th>
                     <th> Teacher Email :</th>
+                    <th> Teacher Telephone:</th>
+
 
                 </tr>
 
@@ -76,6 +77,45 @@
                     <td th:text="${aTeacher.firstName}"/>
                     <td th:text="${aTeacher.lastName}"/>
                     <th th:text="${aTeacher.email}" />
+                    <th th:text="${aTeacher.telephone}" />
+
+                </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+    <hr>
+    <hr>
+
+    <div class="card" style="background-color:#fd7e14">
+        <div class="card-body">
+            <h1> List of Students </h1>
+            <table class="table table-bordered table-stripped">
+                <thead class="thead-dark">
+                <tr>
+                    <th> Student No : </th>
+                    <th> Student First Name </th>
+                    <th> Student Last  Name </th>
+                    <th> Student Email :</th>
+                    <th> Student Telephone:</th>
+                    <th> Student Education</th>
+
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+                <tr th:each="aStudent:${students}">
+                    <td th:text="${aStudent.studentId}"/>
+                    <td th:text="${aStudent.firstName}"/>
+                    <td th:text="${aStudent.lastName}"/>
+                    <th th:text="${aStudent.email}" />
+                    <th th:text="${aStudent.telephone}" />
+                    <th th:text="${aStudent.education}" />
 
                 </tr>
                 </tbody>
