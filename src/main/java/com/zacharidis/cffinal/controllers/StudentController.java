@@ -43,7 +43,7 @@ public class StudentController {
     @PostMapping("/save")
     public String createStudent(Student student , Model  model) {
         studentRepo.save(student);
-        return "redirect:/students/new";
+        return "redirect:/students/";
     }
 
 
