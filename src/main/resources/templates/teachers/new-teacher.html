@@ -29,6 +29,15 @@
         <input type="text" placeholder="Teacher Last Name" th:field="${teacher.lastName}">
         <input type="text" placeholder="Teacher Email Adress" th:field="${teacher.email}">
           <input type="text" placeholder="Teachers Telephone" th:field="${teacher.telephone}">
+
+        <select th:field="${teacher.subjects}" multiple="multiple">
+          <option th:each="subject :${allSubjects}"
+                  th:value="${subject.subjectId}"
+                  th:text="${subject.name}">
+
+          </option>
+        </select>
+
         <button  class="btn btn-primary" type="submit">Create New Teacher</button>
 
 

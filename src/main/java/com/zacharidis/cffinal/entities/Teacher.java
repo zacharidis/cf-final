@@ -1,9 +1,8 @@
 package com.zacharidis.cffinal.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Teacher {
@@ -16,6 +15,20 @@ public class Teacher {
     private String email;
 
     private String telephone;
+
+
+    //---------- one to many => subjects
+
+    @ManyToMany(cascade = {CascadeType.DETACH , CascadeType.MERGE ,CascadeType.REFRESH,CascadeType.PERSIST} ,
+            fetch = FetchType.LAZY)
+
+    @JoinTable(name="subject_teacher",
+    joinColumns = @JoinColumn(name="teacher_id")
+    ,inverseJoinColumns = @JoinColumn(name="subject_id"))
+    private List<Subject> subjects;
+
+
+
 
     // constructors
 
@@ -31,6 +44,14 @@ public class Teacher {
 
     // getters and setters
 
+
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(List<Subject> subjects) {
+        this.subjects = subjects;
+    }
 
     public String getTelephone() {
         return telephone;
@@ -71,4 +92,14 @@ public class Teacher {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    // helper to add subjects
+
+    public  void addSubject(Subject subject){
+        if (subjects == null ){
+            subjects = new ArrayList<>();
+        }
+        subjects.add(subject);
+    }
+
 }

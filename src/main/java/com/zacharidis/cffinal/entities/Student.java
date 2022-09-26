@@ -18,6 +18,11 @@ public class Student {
     private String email;
     private String telephone;
 
+
+
+
+
+
     public Student (){}
     public Student(String firstName, String lastName, String education, String email, String telephone) {
         this.firstName = firstName;
