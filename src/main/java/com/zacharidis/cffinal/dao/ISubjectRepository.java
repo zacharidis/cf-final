@@ -11,4 +11,7 @@ public interface ISubjectRepository extends CrudRepository<Subject ,Long> {
     List<Subject> findAll();
 
 
+
+
+
 }

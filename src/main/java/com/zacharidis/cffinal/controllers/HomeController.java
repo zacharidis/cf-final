@@ -3,6 +3,7 @@ package com.zacharidis.cffinal.controllers;
 import com.zacharidis.cffinal.dao.IStudentRepository;
 import com.zacharidis.cffinal.dao.ISubjectRepository;
 import com.zacharidis.cffinal.dao.ITeacherRepository;
+import com.zacharidis.cffinal.dto.ITeacherSubject;
 import com.zacharidis.cffinal.entities.Student;
 import com.zacharidis.cffinal.entities.Subject;
 import com.zacharidis.cffinal.entities.Teacher;
@@ -34,8 +35,8 @@ public class HomeController {
             model.addAttribute("students",students);
 
 
-            List<Teacher> teachers = teacherRepo.findAll();
-            model.addAttribute("teachers",teachers);
+             List<Teacher> teachers = teacherRepo.findAll();
+             model.addAttribute("teachers",teachers);
 
             List<Subject> subjects = subRepo.findAll();
             model.addAttribute("subjects",subjects);
